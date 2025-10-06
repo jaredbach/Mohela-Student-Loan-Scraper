@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Mohela Sync",
+  "version": "1.0",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://myaccount.mohela.studentaid.gov/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+    "content_scripts": [
+    {
+        "matches": ["https://myaccount.mohela.studentaid.gov/*"],
+        "js": ["content.js"]
+    }
+    ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
+}
